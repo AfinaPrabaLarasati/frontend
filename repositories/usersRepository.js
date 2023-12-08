@@ -24,7 +24,7 @@ class usersRepository {
   }
 
   static async getAllUsers() {
-    const getUser = await users.findMany();
+    const getUser = await users.findAll();
     return getUser;
   }
 

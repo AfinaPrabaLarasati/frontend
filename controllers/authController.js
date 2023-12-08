@@ -90,5 +90,11 @@ const deleteUserById = async (req, res) => {
   }
 }
 
+const getAllUsers = async (req, res) => {
+  const {status, status_code, message, data} = await authService.getAllUsers()
 
-module.exports = { register, login, currentUser, loginUser, getRoom , deleteUserById};
+  res.status(status_code).send({status: status, message: message,data: data})
+}
+
+
+module.exports = { register, login, currentUser, loginUser, getRoom , deleteUserById, getAllUsers};

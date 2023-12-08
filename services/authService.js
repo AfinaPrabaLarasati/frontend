@@ -392,6 +392,37 @@ if (deletedUser) {
       }
     }
   }
+
+  static async getAllUsers() {
+    try {
+      const users = await usersRepository.getAllUsers()
+
+      if (users ) {
+
+        const nonSuperAdmin = users.filter( user => user.role !== "superadmin")
+        return {
+          status: true,
+          status_code: 200,
+          message: "All data",
+          data: nonSuperAdmin
+        }
+      } else {
+        return {
+          status: false,
+          status_code: 400,
+          message: "No User",
+          data: null
+        }
+      }
+    } catch (error) {
+      return {
+        status: false,
+        status_code: 500,
+        message: "Internal server error" + error,
+        data: null
+      }
+    }
+  }
 }
 
 module.exports = AuthService;
