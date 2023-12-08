@@ -18,6 +18,16 @@ class usersRepository {
     return getUser;
   }
 
+  static async getById({ id }) {
+    const getUser = await users.findOne({ where: { id: id } });
+    return getUser;
+  }
+
+  static async getAllUsers() {
+    const getUser = await users.findMany();
+    return getUser;
+  }
+
   static async getByRoom({ room }) {
     const getUser = await users.findOne({ where: { room: room } });
     return getUser;
@@ -25,6 +35,11 @@ class usersRepository {
 
   static async getRoomByNumber({ number }) {
     const getNumber = await rooms.findOne({ where: { number: number } });
+    return getNumber;
+  }
+
+  static async deleteUserById(id ) {
+    const getNumber = await users.destroy({ where: { id: id } });
     return getNumber;
   }
 }

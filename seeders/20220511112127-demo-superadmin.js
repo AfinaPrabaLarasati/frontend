@@ -13,7 +13,7 @@ module.exports = {
       [
         {
           name: "afinaprabalarasati",
-          email: "superadmin@gmail.com",
+          email: "afinaprabalarasati@gmail.com",
           password: hashedPassword,
           role: ROLES.SUPERADMIN,
           createdAt: new Date(),

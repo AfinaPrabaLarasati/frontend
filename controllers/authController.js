@@ -77,4 +77,18 @@ const getRoom = async (req, res) => {
   });
 };
 
-module.exports = { register, login, currentUser, loginUser, getRoom };
+const deleteUserById = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const { status, status_code, message, data } = await authService.deleteUserById({ id });
+
+    res.status(status_code).send({ status, message, data });
+  } catch (error) {
+    console.error("Error in deleteUserById route:", error);
+    res.status(500).send({ status: false, message: "Internal server error", data: null });
+  }
+}
+
+
+module.exports = { register, login, currentUser, loginUser, getRoom , deleteUserById};

@@ -359,6 +359,39 @@ class AuthService {
       };
     }
   }
+
+  static async deleteUserById({id}) {
+    try {
+      const users = await usersRepository.getById({id})
+
+      if (users) {
+        const deletedUser = await usersRepository.deleteUserById(users.id)
+if (deletedUser) {
+  
+  return {
+    status: true,
+    status_code: 200,
+    message: "Delete user successful",
+    data: users
+  }
+} 
+      } else {
+        return {
+          status: false,
+          status_code: 400,
+          message: "No user",
+          data: null
+        }
+      }
+    } catch (error) {
+      return {
+        status: false,
+    status_code: 500,
+    message: "Internal server error" + error,
+    data: null
+      }
+    }
+  }
 }
 
 module.exports = AuthService;
