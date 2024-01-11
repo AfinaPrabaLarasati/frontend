@@ -8,6 +8,13 @@
     "url": "postgresql://postgres:22AE1f32c-5D-C4f4fFgBdGebbfEaFE5@viaduct.proxy.rlwy.net:42159/railway",
     "port": 42159
   },
+  "test": {
+    "username": "postgres",
+    "password": "ferdi",
+    "database": "doorlock_db",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
   "production": {
     "username": "postgres",
     "password": "22AE1f32c-5D-C4f4fFgBdGebbfEaFE5",
