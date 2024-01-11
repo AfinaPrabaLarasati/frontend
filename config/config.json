@@ -1,12 +1,12 @@
 {
   "development": {
     "username": "postgres",
-    "password": "gaE1g5-cbGAffac-gA*g6c6*bBG46FBD",
+    "password": "22AE1f32c-5D-C4f4fFgBdGebbfEaFE5",
     "database": "railway",
     "host": "viaduct.proxy.rlwy.net",
     "dialect": "postgres",
-    "url": "postgresql://postgres:gaE1g5-cbGAffac-gA*g6c6*bBG46FBD@viaduct.proxy.rlwy.net:45433/railway",
-    "port": 45433
+    "url": "postgresql://postgres:22AE1f32c-5D-C4f4fFgBdGebbfEaFE5@viaduct.proxy.rlwy.net:42159/railway",
+    "port": 42159
   },
   "test": {
     "username": "postgres",
@@ -17,11 +17,11 @@
   },
   "production": {
     "username": "postgres",
-    "password": "gaE1g5-cbGAffac-gA*g6c6*bBG46FBD",
+    "password": "22AE1f32c-5D-C4f4fFgBdGebbfEaFE5",
     "database": "railway",
     "host": "viaduct.proxy.rlwy.net",
     "dialect": "postgres",
-    "url": "postgresql://postgres:gaE1g5-cbGAffac-gA*g6c6*bBG46FBD@viaduct.proxy.rlwy.net:45433/railway",
-    "port": 45433
+    "url": "postgresql://postgres:22AE1f32c-5D-C4f4fFgBdGebbfEaFE5@viaduct.proxy.rlwy.net:42159/railway",
+    "port": 42159
   }
 }
