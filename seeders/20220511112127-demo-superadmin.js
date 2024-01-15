@@ -36,6 +36,26 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          number: 3,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          number: 4,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          number: 5,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          number: 6,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
 
       {}
