@@ -13,8 +13,11 @@ module.exports = {
       [
         {
           name: "afinaprabalarasati",
+          nik: "123",
+          ttl: "Praya, 22 Juni 2001",
           email: "afinaprabalarasati@gmail.com",
           password: hashedPassword,
+          phone: "085961413040",
           role: ROLES.SUPERADMIN,
           createdAt: new Date(),
           updatedAt: new Date(),
