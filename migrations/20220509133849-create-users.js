@@ -17,6 +17,9 @@ module.exports = {
       ttl: {
         type: Sequelize.STRING,
       },
+      alamat: {
+        type: Sequelize.STRING,
+      },
       email: {
         type: Sequelize.STRING,
       },
