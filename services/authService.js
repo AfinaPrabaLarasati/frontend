@@ -2,7 +2,12 @@ const usersRepository = require("../repositories/usersRepository");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { JWT } = require("../lib/const");
-const History = require("../repositories/historyRepository")
+const historyRepository = require("../repositories/historyRepository")
+const dayjs = require("dayjs")
+const utc = require("dayjs/plugin/utc")
+const timezone = require("dayjs/plugin/timezone")
+dayjs.extend(utc);
+dayjs.extend(timezone)
 
 const SALT_ROUND = 10;
 
@@ -302,8 +307,8 @@ class AuthService {
             }
           );
 
-          const loginTime = new Date()
-          const loginHistory = await History.createHistory({
+          const loginTime = dayjs().tz("Asia/Makassar");
+          const loginHistory = await historyRepository.createHistory({
 name: getUser.name, nik: getUser.nik, times: loginTime
           })
           return {

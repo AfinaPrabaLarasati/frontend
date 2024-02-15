@@ -1,6 +1,6 @@
-const {history} = require("../models/history")
+const {history} = require("../models")
 
-class History {
+class historyRepository {
     static async createHistory({
 name, nik, times
     }) {
@@ -12,4 +12,4 @@ name, nik, times
     }
 }
 
-module.exports = History
+module.exports = historyRepository
