@@ -2,12 +2,14 @@ const usersRepository = require("../repositories/usersRepository");
 const authService = require("../services/authService");
 
 const register = async (req, res) => {
-  const { name, email, password, room, role } = req.body;
+  const { name, nik, ttl, alamat, email, password, phone, room, role } = req.body;
 
   const { status, status_code, message, data } = await authService.register({
     name,
+    nik, ttl, alamat,
     email,
     password,
+    phone,
     room,
     role,
   });

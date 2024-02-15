@@ -15,7 +15,7 @@ const middleware = require("./middlewares/auth");
 // controller
 const authController = require("./controllers/authController");
 
-// router
+// endpoint
 // auth
 app.post(
   "/auth/registerUser",

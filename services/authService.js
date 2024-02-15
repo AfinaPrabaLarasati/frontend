@@ -2,12 +2,12 @@ const usersRepository = require("../repositories/usersRepository");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { JWT } = require("../lib/const");
-const { OAuth2Client } = require("google-auth-library");
+const History = require("../repositories/historyRepository")
 
 const SALT_ROUND = 10;
 
 class AuthService {
-  static async register({ name, email, password, room, role }) {
+  static async register({ name,nik, ttl, alamat, email, password, phone, room, role }) {
     try {
       if (!name) {
         return {
@@ -102,8 +102,10 @@ class AuthService {
 
         const createdUser = await usersRepository.create({
           name,
+          nik, ttl, alamat,
           email,
           password: hashedPassword,
+          phone,
           room,
           role,
         });
@@ -300,12 +302,17 @@ class AuthService {
             }
           );
 
+          const loginTime = new Date()
+          const loginHistory = await History.createHistory({
+name: getUser.name, nik: getUser.nik, times: loginTime
+          })
           return {
             status: true,
             status_code: 200,
             message: "User berhasil login",
             data: {
               token,
+              loginHistory
             },
           };
         } else {
