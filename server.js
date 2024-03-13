@@ -14,6 +14,7 @@ const middleware = require("./middlewares/auth");
 
 // controller
 const authController = require("./controllers/authController");
+const historyController = require("./controllers/historyController");
 
 // endpoint
 // auth
@@ -29,6 +30,11 @@ app.get("/auth/me", middleware.authenticate, authController.currentUser);
 app.get("/auth/rooms/:number", authController.getRoom);
 app.delete("/auth/users/delete/:id", authController.deleteUserById);
 app.get("/auth/users", authController.getAllUsers);
+
+// history
+app.delete("/history/delete/:id", historyController.deleteHistory)
+app.get("/histories", historyController.getAllHistory)
+app.get("/histories/get/:numbers", historyController.getAllHistoryByRoom)
 
 app.listen(PORT, () => {
   console.log(`Server berhasil berjalan di port http://localhost:${PORT}`);

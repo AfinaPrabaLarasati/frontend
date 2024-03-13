@@ -14,6 +14,9 @@ module.exports = {
       nik: {
         type: Sequelize.STRING
       },
+      numbers: {
+        type: Sequelize.INTEGER
+      },
       times: {
         type: Sequelize.DATE
       },

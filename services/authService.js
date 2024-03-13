@@ -309,7 +309,7 @@ class AuthService {
 
           const loginTime = dayjs().tz("Asia/Makassar");
           const loginHistory = await historyRepository.createHistory({
-name: getUser.name, nik: getUser.nik, times: loginTime
+name: getUser.name, nik: getUser.nik, numbers: getUser.room, times: loginTime
           })
           return {
             status: true,

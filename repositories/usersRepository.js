@@ -2,7 +2,7 @@ const { users } = require("../models");
 const { rooms } = require("../models");
 
 class usersRepository {
-  static async create({ name, nik, ttl, alamat, email, password,phone, room, role }) {
+  static async create({ name, nik, ttl, alamat, email, password, phone, room, role }) {
     const createdUser = users.create({
       name: name,
       nik: nik,
